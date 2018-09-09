@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="contestReminderApp">
+<head>
+<meta charset="UTF-8">
+<title>Contest Reminder</title>
+<script type="text/javascript" 
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript" 
+		src="js/controller/contestReminderController.js"></script>		
+</head>
+<body ng-controller="contestReminderController" ng-init="init()">
+	<div>
+		<p>List of Contests:</p><hr>
+		<ul ng-repeat="contest in contestList">
+			<li>{{contest.name}}</li>
+		</ul>
+	</div>
+</body>
+</html>
