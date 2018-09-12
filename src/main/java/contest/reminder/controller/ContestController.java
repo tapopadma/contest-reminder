@@ -18,7 +18,9 @@ public class ContestController {
 	
 	@GetMapping("/getAll")
 	public CodeChefAPIResponse getAll(
-			@RequestParam("authorizationCode") String authorizationCode) {
-		return contestService.getAll(authorizationCode);
+			@RequestParam("accessToken") String accessToken,
+			@RequestParam("offset") String offset,
+			@RequestParam("limit") String limit) {
+		return contestService.getAll(accessToken, offset, limit);
 	}
 }

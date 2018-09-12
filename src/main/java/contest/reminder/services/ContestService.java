@@ -11,8 +11,11 @@ public class ContestService {
 	@Autowired
 	private CodechefAPIService codechefAPIService;
 	
-	public CodeChefAPIResponse getAll(String authorizationCode) {
-		return codechefAPIService.processGETRequest(authorizationCode, "/contests");
+	public CodeChefAPIResponse getAll(String accessToken,
+			String offset, String limit) {
+		return codechefAPIService.processGET(accessToken, 
+				"/contests?offset="+offset+
+				"&limit="+limit);
 	}
 	
 }

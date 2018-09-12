@@ -25,6 +25,17 @@ public class CodechefAPIService {
 
 	private final String PREFIX_URL = "https://api.codechef.com";
 	
+	public CodeChefAPIResponse processGET(
+			String accessToken, String uri) {
+		String url = getUrl(uri);
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Accept", "application/json");
+		headers.add("Authorization", "Bearer " + accessToken);
+		HttpEntity<String> entity = new HttpEntity<>("parameters", headers);
+		return restTemplate.exchange(url, HttpMethod.GET, 
+				entity, CodeChefAPIResponse.class).getBody();
+	}
+	
 	public CodeChefAPIResponse processGETRequest(
 			String authorizationCode, String uri) {
 		CodeChefAPIResponse response = new CodeChefAPIResponse();

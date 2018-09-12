@@ -13,7 +13,9 @@
 		<p>List of Contests:</p><hr>
 		<ul ng-repeat="contest in contestList">
 			<li>{{contest.name}}</li>
-		</ul>
+		</ul><hr>
+		<button style="float:left" ng-click="onPrevClick()">Prev</button>
+		<button style="float:right" ng-click="onNextClick()">Next</button>
 	</div>
 </body>
 </html>
